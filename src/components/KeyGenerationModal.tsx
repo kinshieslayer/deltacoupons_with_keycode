@@ -47,29 +47,18 @@ const KeyGenerationModal = ({
     }
   }, [open]);
 
-  // Realistic countdown - decrease by 1 every 8-15 seconds
+  // Sync counters: Every 10-20 seconds, simulate a real user claim
   useEffect(() => {
-    if (open && couponsLeft > 50) {
-      const randomDelay = Math.floor(Math.random() * 7000) + 8000; // 8-15 seconds
+    if (open && couponsLeft > 50 && usedToday < 500) {
+      const randomDelay = Math.floor(Math.random() * 10000) + 10000; // 10-20 seconds
       const timer = setTimeout(() => {
         setCouponsLeft(prev => Math.max(50, prev - 1));
+        setUsedToday(prev => prev + 1);
       }, randomDelay);
 
       return () => clearTimeout(timer);
     }
-  }, [open, couponsLeft]);
-
-  // Realistic "Used Today" counter - increase by 1 every 15-25 seconds
-  useEffect(() => {
-    if (open && usedToday < 200) {
-      const randomDelay = Math.floor(Math.random() * 10000) + 15000; // 15-25 seconds
-      const timer = setTimeout(() => {
-        setUsedToday(prev => Math.min(200, prev + 1));
-      }, randomDelay);
-
-      return () => clearTimeout(timer);
-    }
-  }, [open, usedToday]);
+  }, [open, couponsLeft, usedToday]);
 
   useEffect(() => {
     if (status === "verifying") {
