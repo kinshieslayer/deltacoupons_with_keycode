@@ -1,0 +1,93 @@
+/* Text Colors */
+.text { color: var(--text) !important; }
+.text-second { color: var(--text-second) !important; }
+.text-third { color: var(--text-third) !important; }
+.text-lighter { color: var(--text-lighter); }
+.text-darker { color: var(--text-darker); }
+.text-darkest { color: var(--text-darkest); }
+
+/* Background Colors */
+.bg-n { background: transparent !important;}
+.bg { background-color: var(--background); }
+.bg-lightest { background-color: var(--background-lightest); }
+.bg-lighter { background-color: var(--background-lighter); }
+.bg-darker { background-color: var(--background-darker); }
+.bg-darkest { background-color: var(--background-darkest); }
+
+/* Background Secondary Colors */
+.bg-secondary { background-color: var(--background-secondary) !important; }
+.bg-secondary-lightest { background-color: var(--background-secondary-lightest) !important; }
+.bg-secondary-lighter { background-color: var(--background-secondary-lighter) !important; }
+.bg-secondary-darker { background-color: var(--background-secondary-darker) !important; }
+.bg-secondary-darkest { background-color: var(--background-secondary-darkest) !important; }
+
+/* Primary Colors */
+.primary { color: var(--primary); }
+.primary-lightest { color: var(--primary-lightest); }
+.primary-lighter { color: var(--primary-lighter); }
+.primary-darker { color: var(--primary-darker); }
+.primary-darkest { color: var(--primary-darkest); }
+
+.bg-primary { background-color: var(--primary); }
+.bg-primary-lightest { background-color: var(--primary-lightest); }
+.bg-primary-lighter { background-color: var(--primary-lighter); }
+.bg-primary-darker { background-color: var(--primary-darker); }
+.bg-primary-darkest { background-color: var(--primary-darkest); }
+
+/* Accent Colors */
+.accent { color: var(--accent); }
+.accent-lightest { color: var(--accent-lightest); }
+.accent-lighter { color: var(--accent-lighter); }
+.accent-darker { color: var(--accent-darker); }
+.accent-darkest { color: var(--accent-darkest); }
+
+.bg-accent { background-color: var(--accent); }
+.bg-accent-lightest { background-color: var(--accent-lightest); }
+.bg-accent-lighter { background-color: var(--accent-lighter); }
+.bg-accent-darker { background-color: var(--accent-darker); }
+.bg-accent-darkest { background-color: var(--accent-darkest); }
+
+/* Border Colors */
+.border { border: 1px solid; }
+.border-0 { border: 0; }
+.border-2 { border: 2px solid; }
+.border-4 { border: 4px solid; }
+.border-8 { border: 8px solid; }
+
+.border-t { border-top: 1px solid; }
+.border-r { border-right: 1px solid; }
+.border-b { border-bottom: 1px solid; }
+.border-l { border-left: 1px solid; }
+
+.border-solid { border-style: solid; }
+.border-dashed { border-style: dashed !important; }
+.border-dotted { border-style: dotted; }
+
+.border-primary { border-color: var(--primary) !important; }
+.border-primary-lightest { border-color: var(--primary-lightest) !important; }
+.border-primary-lighter { border-color: var(--primary-lighter) !important; }
+.border-primary-darker { border-color: var(--primary-darker) !important; }
+.border-primary-darkest { border-color: var(--primary-darkest) !important; }
+
+.border-accent { border-color: var(--accent) !important; }
+.border-accent-lightest { border-color: var(--accent-lightest) !important; }
+.border-accent-lighter { border-color: var(--accent-lighter) !important; }
+.border-accent-darker { border-color: var(--accent-darker) !important; }
+.border-accent-darkest { border-color: var(--accent-darkest) !important; }
+
+/* Hover States */
+.hover\:bg-primary:hover { background-color: var(--primary) !important; }
+.hover\:bg-accent:hover { background-color: var(--accent) !important; }
+.hover\:bg-primary-darker:hover { background-color: var(--primary-darker) !important; }
+.hover\:text-white:hover { color: white !important; }
+
+/* Dark Mode Utilities */
+[data-bs-theme="dark"] .dark\:bg { background-color: var(--background); }
+[data-bs-theme="dark"] .dark\:bg-secondary { background-color: var(--background-secondary); }
+[data-bs-theme="dark"] .dark\:text { color: var(--text); }
+
+/* Add new border utility classes */
+.border-subtle { border-color: var(--border-subtle) !important; }
+.border-light { border-color: var(--border-light) !important; }
+.border-base { border-color: var(--border-base) !important; }
+.border-strong { border-color: var(--border-strong) !important; }

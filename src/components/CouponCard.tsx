@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { CheckCircle, Gamepad2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Coupon } from "@/data/coupons";
-import PlatformModal from "./PlatformModal";
 import KeyGenerationModal from "./KeyGenerationModal";
 
 interface CouponCardProps {
@@ -12,110 +11,91 @@ interface CouponCardProps {
 }
 
 const CouponCard = ({ coupon, index }: CouponCardProps) => {
-  const [showPlatformModal, setShowPlatformModal] = useState(false);
   const [showKeyModal, setShowKeyModal] = useState(false);
-  const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
 
   const handleShowCode = () => {
-    if (coupon.multi_platform) {
-      setShowPlatformModal(true);
-    } else {
-      setSelectedPlatform(coupon.platforms[0]);
-      setShowKeyModal(true);
-    }
-  };
-
-  const handlePlatformSelect = (platform: string) => {
-    setSelectedPlatform(platform);
-    setShowPlatformModal(false);
     setShowKeyModal(true);
   };
 
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
-        className="group glass-card-hover rounded-xl overflow-hidden"
+        transition={{ delay: index * 0.05 }}
+        className="group bg-card border border-border overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-all duration-300"
+        style={{ borderRadius: '4px' }}
       >
-        {/* Card Image/Background */}
-        <div className="relative h-32 sm:h-40 bg-gradient-to-br from-card via-muted to-card overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Gamepad2 className="w-16 h-16 text-primary/20" />
-          </div>
-          
+        {/* Card Image Area */}
+        <div className="relative h-24 sm:h-32 overflow-hidden bg-muted">
+          {coupon.background_file ? (
+            <img
+              src={`/assets/${coupon.background_file}`}
+              alt={coupon.item_name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Gamepad2 className="w-8 h-8 text-muted-foreground/50" />
+            </div>
+          )}
+
           {/* Discount Badge */}
-          <div className="absolute top-3 right-3">
-            <span className="px-2 py-1 text-xs font-bold rounded-md bg-primary text-primary-foreground shadow-glow">
+          <div className="absolute top-2 right-2">
+            <span className="px-1.5 py-0.5 text-[10px] font-black rounded-sm bg-primary text-primary-foreground uppercase tracking-tighter">
               {coupon.discount}
             </span>
           </div>
 
-          {/* Verified Badge */}
-          {coupon.verified && (
-            <div className="absolute top-3 left-3 verified-badge">
-              <CheckCircle className="w-3 h-3" />
-              <span>Verified</span>
-            </div>
-          )}
-
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
         </div>
 
         {/* Card Content */}
-        <div className="p-4">
-          <span className="text-xs text-muted-foreground uppercase tracking-wider">
-            {coupon.category}
-          </span>
-          <h3 className="font-semibold text-foreground mt-1 mb-2 line-clamp-1 group-hover:text-primary transition-colors">
-            {coupon.item_name}
-          </h3>
-
-          {/* Platforms */}
-          <div className="flex flex-wrap gap-1 mb-3">
-            {coupon.platforms.slice(0, 2).map((platform) => (
-              <span
-                key={platform}
-                className="text-[10px] px-2 py-0.5 rounded bg-muted/50 text-muted-foreground"
-              >
-                {platform.split(" ")[0]}
-              </span>
-            ))}
-            {coupon.platforms.length > 2 && (
-              <span className="text-[10px] px-2 py-0.5 rounded bg-muted/50 text-muted-foreground">
-                +{coupon.platforms.length - 2}
-              </span>
-            )}
+        <div className="p-3 flex-1 flex flex-col">
+          <div className="mb-3">
+            <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-widest block mb-0.5">
+              {coupon.category}
+            </span>
+            <h3 className="font-bold text-card-foreground text-sm sm:text-base leading-tight group-hover:text-primary transition-colors line-clamp-1">
+              {coupon.item_name}
+            </h3>
           </div>
 
-          <Button
-            onClick={handleShowCode}
-            className="w-full btn-glow bg-accent-gradient text-primary-foreground font-medium text-sm"
-          >
-            Show Coupon Code
-          </Button>
+          <div className="mt-auto">
+            <button
+              onClick={handleShowCode}
+              className="w-full bg-[#F59E0B] hover:bg-[#D97706] text-slate-950 font-black text-[11px] h-9 uppercase tracking-widest transition-colors"
+              style={{ borderRadius: '4px' }}
+            >
+              Show Code
+            </button>
 
-          <p className="text-[10px] text-muted-foreground text-center mt-2">
-            Expires: {coupon.expires}
-          </p>
+            <div className="flex items-center justify-between mt-2.5 px-0.5">
+              {coupon.verified ? (
+                <div className="flex items-center gap-1">
+                  <CheckCircle className="w-2.5 h-2.5 text-green-500" />
+                  <span className="text-[9px] font-bold text-green-500 uppercase tracking-tighter">Verified</span>
+                </div>
+              ) : <div />}
+              <span className="text-[9px] font-bold text-amber-500 uppercase tracking-tighter">
+                EXP: {coupon.expires.split(',')[0]}
+              </span>
+            </div>
+          </div>
         </div>
       </motion.div>
-
-      <PlatformModal
-        open={showPlatformModal}
-        onClose={() => setShowPlatformModal(false)}
-        platforms={coupon.platforms}
-        onSelect={handlePlatformSelect}
-        gameName={coupon.item_name}
-      />
 
       <KeyGenerationModal
         open={showKeyModal}
         onClose={() => setShowKeyModal(false)}
         gameName={coupon.item_name}
-        platform={selectedPlatform || ""}
+        multiPlatform={coupon.multi_platform}
+        platforms={coupon.platforms}
+        description={coupon.description}
+        backgroundImage={coupon.background_file}
+        icon={coupon.icon}
+        externalUrl={coupon.external_url}
       />
     </>
   );

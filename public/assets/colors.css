@@ -1,0 +1,771 @@
+/* assets\front\css\colors.css */
+
+/* Base theme attributes */
+:root {
+    --success-color: #4bb543;
+    --warning-color: #ffd500;
+    --transition-speed: 0.3s;
+    --primary-rgb: var(--primary-500);
+    --color-text-on-primary: var(--text-50);
+}
+[data-accent-color="a-c-c1"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #313b49;
+    --text-second: #707987;
+    --text-third: #98a4b2;
+    --background: #f7f7fc;
+    --background-secondary: #eeeef9;
+    --primary: #d792d8;
+    --accent: #6169ff;
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+
+    /* Background variations */
+    --background-lightest: white;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+}
+
+[data-accent-color="a-c-c1"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #c4cad4;
+    --text-second: #707987;
+    --text-third: #545e6f;    
+    --background: #1e2734;
+    --background-secondary: #121b28;
+    --primary: #d792d8;
+    --accent: #6169ff;
+
+
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+}
+/* a-c-c2 Light Theme */
+[data-accent-color="a-c-c2"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #2b3845;
+    --text-second: #5d7185;
+    --text-third: #8fa3b7;
+    --background: #f8fbfd;
+    --background-secondary: #f0f7fc;
+    --primary: #0088cc; /* Deeper blue as primary */
+    --accent: #01c0ff;  /* Requested accent color */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: white;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+}
+
+/* a-c-c2 Dark Theme */
+[data-accent-color="a-c-c2"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #e0f4ff;
+    --text-second: #a3d5eb;
+    --text-third: #6798b4;    
+    --background: #1a2632;
+    --background-secondary: #111c26;
+    --primary: #0088cc; /* Deeper blue as primary */
+    --accent: #01c0ff;  /* Requested accent color */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+}
+/* a-c-c3 Light Theme */
+[data-accent-color="a-c-c3"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #1a2433;          /* Deeper, richer text color */
+    --text-second: #4a5c70;   /* Balanced mid-tone */
+    --text-third: #798799;    /* Refined gray with slight blue undertone */
+    --background: #ffffff;    /* Clean white base */
+    --background-secondary: #f8fcfa;  /* Subtle mint tint */
+    --primary: #00855f;       /* Modern emerald primary */
+    --accent: #10b981;        /* Fresh, vibrant green accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: #ffffff;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+
+    /* Special interaction states */
+    --hover-overlay: rgba(16, 185, 129, 0.04);  /* Subtle green hover */
+    --active-overlay: rgba(16, 185, 129, 0.08); /* Slightly stronger for active */
+}
+
+/* a-c-c3 Dark Theme */
+[data-accent-color="a-c-c3"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #ebf4f1;          /* Crisp, slightly green-tinted white */
+    --text-second: #a8bfb7;   /* Sophisticated mid-tone */
+    --text-third: #7a8f88;    /* Deep green-gray */
+    --background: #1a2827;    /* Modern forest dark */
+    --background-secondary: #141f1e;  /* Deeper green-tinted dark */
+    --primary: #00855f;       /* Modern emerald primary */
+    --accent: #10b981;        /* Fresh, vibrant green accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+
+    /* Special interaction states */
+    --hover-overlay: rgba(16, 185, 129, 0.08);  /* Subtle green hover */
+    --active-overlay: rgba(16, 185, 129, 0.15); /* Slightly stronger for active */
+}
+/* a-c-c4 Light Theme */
+[data-accent-color="a-c-c4"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #2d2832;
+    --text-second: #635d69;
+    --text-third: #8f8a94;
+    --background: #f8fafd;      /* Cool light blue-tinted white */
+    --background-secondary: #f4f6fc;  /* Slightly more saturated cool background */
+    --primary: #d63030; /* Deeper red as primary */
+    --accent: #fc4349;  /* Requested accent color */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: white;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+}
+
+/* a-c-c4 Dark Theme */
+[data-accent-color="a-c-c4"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #f4f6f9;
+    --text-second: #b4bac4;
+    --text-third: #808791;    
+    --background: #1a2028;    /* Cool dark blue-gray */
+    --background-secondary: #141820;  /* Darker blue-tinted background */
+    --primary: #d63030; /* Deeper red as primary */
+    --accent: #fc4349;  /* Requested accent color */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+}
+/* a-c-c5 Light Theme */
+[data-accent-color="a-c-c5"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #2b303a;
+    --text-second: #596173;
+    --text-third: #8792a8;
+    --background: #f9fbfd;      /* Cool light blue-white for contrast */
+    --background-secondary: #f5f7fc;  /* Subtle blue-tinted secondary */
+    --primary: #e47911;        /* Deeper orange as primary */
+    --accent: #ff9900;         /* Amazon orange accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: white;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+}
+
+/* a-c-c5 Dark Theme */
+[data-accent-color="a-c-c5"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #f5f7fa;
+    --text-second: #b8bfcc;
+    --text-third: #8792a8;    
+    --background: #1a1f2b;    /* Deep blue-tinted dark background */
+    --background-secondary: #13171f;  /* Darker blue-tinted background */
+    --primary: #e47911;        /* Deeper orange as primary */
+    --accent: #ff9900;         /* Amazon orange accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+}
+/* a-c-c6 Light Theme */
+[data-accent-color="a-c-c6"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #2b2d3a;          /* Deep neutral gray with slight coolness */
+    --text-second: #575b6e;   /* Balanced mid-tone */
+    --text-third: #8589a0;    /* Soft cool gray */
+    --background: #fafbfd;    /* Clean, cool white */
+    --background-secondary: #f5f7fc;  /* Subtle cool secondary */
+    --primary: #7c4dff;       /* Deep purple primary */
+    --accent: #ff6af6;        /* Vibrant pink accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: white;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+}
+
+/* a-c-c6 Dark Theme */
+[data-accent-color="a-c-c6"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #f4f6fc;          /* Clean white with slight coolness */
+    --text-second: #b4b8c9;   /* Neutral mid-tone */
+    --text-third: #8085a0;    /* Deep cool gray */
+    --background: #17192a;    /* Deep indigo-based dark */
+    --background-secondary: #12141f;  /* Darker indigo background */
+    --primary: #7c4dff;       /* Deep purple primary */
+    --accent: #ff6af6;        /* Vibrant pink accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+}
+/* a-c-c8 Light Theme */
+[data-accent-color="a-c-c7"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #283240;          /* Deep blue-gray */
+    --text-second: #526273;   /* Balanced mid-tone */
+    --text-third: #7f8e9d;    /* Soft bluish gray */
+    --background: #f8fcfb;    /* Very subtle turquoise tint */
+    --background-secondary: #f3faf8;  /* Slightly deeper turquoise tint */
+    --primary: #4fd6bc;       /* Turquoise primary */
+    --accent: #ff1970;        /* Vibrant pink accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: white;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+}
+
+/* a-c-c8 Dark Theme */
+[data-accent-color="a-c-c7"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #e8f4f1;          /* Turquoise-tinted white */
+    --text-second: #a6c5be;   /* Muted turquoise-gray */
+    --text-third: #729892;    /* Deeper turquoise-gray */
+    --background: #1a2726;    /* Deep turquoise-tinted dark */
+    --background-secondary: #151f1e;  /* Darker turquoise-tinted */
+    --primary: #4fd6bc;       /* Turquoise primary */
+    --accent: #ff1970;        /* Vibrant pink accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+}
+/* a-c-c8 Light Theme */
+[data-accent-color="a-c-c8"][data-bs-theme="light"] {
+    /* Main colors */
+    --text: #1f2937;          /* Deep cool gray */
+    --text-second: #4b5563;   /* Balanced mid-tone */
+    --text-third: #8b95a5;    /* Soft cool gray */
+    --background: #f8fcfb;    /* Subtle turquoise-white */
+    --background-secondary: #f2f9f8;  /* Light turquoise tint */
+    --primary: #3cbba3;       /* Deeper turquoise */
+    --accent: #4fd6bc;        /* Main turquoise accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: white;
+    --background-lighter: color-mix(in srgb, var(--background) 75%, white);
+    --background-darker: color-mix(in srgb, var(--background) 75%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 50%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 50%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 25%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 25%, black);
+
+    /* Add special border colors for light mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, black); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, black);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, black);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, black); /* Emphasised border */
+}
+
+/* a-c-c8 Dark Theme */
+[data-accent-color="a-c-c8"][data-bs-theme="dark"] {
+    /* Main colors */
+    --text: #e6f3f0;          /* Bright turquoise-white */
+    --text-second: #a8c5bf;   /* Mid turquoise-gray */
+    --text-third: #729892;    /* Deep turquoise-gray */
+    --background: #101918;    /* Rich dark turquoise base */
+    --background-secondary: #131e1d;  /* Elevated dark turquoise */
+    --primary: #3cbba3;       /* Deeper turquoise */
+    --accent: #4fd6bc;        /* Main turquoise accent */
+
+    /* Text variations */
+    --text-lightest: color-mix(in srgb, var(--text) 25%, white);
+    --text-lighter: color-mix(in srgb, var(--text) 50%, white);
+    --text-darker: color-mix(in srgb, var(--text) 50%, black);
+    --text-darkest: color-mix(in srgb, var(--text) 25%, black);
+      
+    /* Background variations */
+    --background-lightest: color-mix(in srgb, var(--background) 25%, white);
+    --background-lighter: color-mix(in srgb, var(--background) 50%, white);
+    --background-darker: color-mix(in srgb, var(--background) 50%, black);
+    --background-darkest: color-mix(in srgb, var(--background) 75%, black);
+
+    /* Background Secondary variations */
+    --background-secondary-lightest: color-mix(in srgb, var(--background-secondary) 90%, white);
+    --background-secondary-lighter: color-mix(in srgb, var(--background-secondary) 75%, white);
+    --background-secondary-darker: color-mix(in srgb, var(--background-secondary) 50%, black);
+    --background-secondary-darkest: color-mix(in srgb, var(--background-secondary) 75%, black);
+
+    /* Primary variations */
+    --primary-lightest: color-mix(in srgb, var(--primary) 25%, white);
+    --primary-lighter: color-mix(in srgb, var(--primary) 50%, white);
+    --primary-darker: color-mix(in srgb, var(--primary) 50%, black);
+    --primary-darkest: color-mix(in srgb, var(--primary) 75%, black);
+
+    /* Accent variations */
+    --accent-lightest: color-mix(in srgb, var(--accent) 25%, white);
+    --accent-lighter: color-mix(in srgb, var(--accent) 50%, white);
+    --accent-darker: color-mix(in srgb, var(--accent) 50%, black);
+    --accent-darkest: color-mix(in srgb, var(--accent) 75%, black);
+
+    /* Add special border colors for dark mode */
+    --border-subtle: color-mix(in srgb, var(--background) 95%, white); /* Very subtle */
+    --border-light: color-mix(in srgb, var(--background) 90%, white);  /* Light divider */
+    --border-base: color-mix(in srgb, var(--background) 85%, white);   /* Standard border */
+    --border-strong: color-mix(in srgb, var(--background) 80%, white); /* Emphasised border */
+}

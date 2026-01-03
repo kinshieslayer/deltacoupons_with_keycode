@@ -18,48 +18,54 @@ const HeroSlider = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-2xl">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-card via-background to-card">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
-        </div>
-      </div>
-
+    <div className="relative w-full h-[220px] sm:h-[350px] lg:h-[450px] overflow-hidden bg-slate-950 border border-slate-800" style={{ borderRadius: '4px' }}>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
           className="absolute inset-0"
         >
-          {/* Gradient Overlay */}
-          <div className={`absolute inset-0 bg-gradient-to-r ${heroSlides[currentSlide].gradient}`} />
+          {/* Background Image */}
+          {(heroSlides[currentSlide] as any).image && (
+            <div className="absolute inset-0">
+              <img
+                src={`/assets/${(heroSlides[currentSlide] as any).image}`}
+                alt={heroSlides[currentSlide].title}
+                className="w-full h-full object-cover opacity-40 grayscale-[0.2]"
+              />
+            </div>
+          )}
+
+          {/* Solid Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/40 to-transparent" />
 
           {/* Content */}
-          <div className="absolute inset-0 flex items-center">
-            <div className="container mx-auto px-4 sm:px-8">
+          <div className="absolute inset-0 flex items-center z-10">
+            <div className="container mx-auto px-6 sm:px-12">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="max-w-2xl"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                className="max-w-xl"
               >
-                <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold rounded-full bg-primary/20 text-primary border border-primary/30">
-                  FEATURED
-                </span>
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-display font-bold mb-4 text-foreground">
+                <div className="inline-block px-2 py-0.5 mb-3 text-[10px] font-black rounded-sm bg-amber-500 text-slate-950 tracking-tighter uppercase">
+                  Featured Offer
+                </div>
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black mb-2 text-white uppercase tracking-tight leading-none">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className="text-lg sm:text-xl text-muted-foreground mb-6">
+                <p className="text-sm sm:text-base text-slate-400 mb-6 font-medium max-w-md line-clamp-2">
                   {heroSlides[currentSlide].subtitle}
                 </p>
-                <Button className="btn-glow bg-accent-gradient text-primary-foreground font-semibold px-6 py-3 rounded-lg">
+                <button
+                  className="bg-[#F59E0B] hover:bg-[#D97706] text-slate-950 font-black px-6 py-2.5 text-xs lg:text-sm uppercase tracking-widest transition-all cursor-pointer relative z-20"
+                  style={{ borderRadius: '4px' }}
+                >
                   {heroSlides[currentSlide].cta}
-                </Button>
+                </button>
               </motion.div>
             </div>
           </div>
@@ -67,28 +73,29 @@ const HeroSlider = () => {
       </AnimatePresence>
 
       {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm border border-border/30 flex items-center justify-center hover:bg-background/80 transition-colors"
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm border border-border/30 flex items-center justify-center hover:bg-background/80 transition-colors"
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button>
+      <div className="absolute bottom-6 right-6 flex gap-2 z-20">
+        <button
+          onClick={prevSlide}
+          className="w-9 h-9 rounded border border-slate-700 bg-slate-900/80 text-white flex items-center justify-center hover:bg-slate-800 transition-colors"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="w-9 h-9 rounded border border-slate-700 bg-slate-900/80 text-white flex items-center justify-center hover:bg-slate-800 transition-colors"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </div>
 
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      {/* Indicators */}
+      <div className="absolute bottom-6 left-6 flex gap-1.5 z-20">
         {heroSlides.map((_, i) => (
-          <button
+          <div
             key={i}
-            onClick={() => setCurrentSlide(i)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              i === currentSlide ? "w-8 bg-primary" : "bg-foreground/30"
-            }`}
+            className={`h-1 transition-all duration-300 ${i === currentSlide ? "w-8 bg-amber-500" : "w-2 bg-slate-700"
+              }`}
+            style={{ borderRadius: '1px' }}
           />
         ))}
       </div>
