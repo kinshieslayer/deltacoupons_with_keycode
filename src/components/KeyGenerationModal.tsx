@@ -32,8 +32,6 @@ const KeyGenerationModal = ({
   const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
   const [couponsLeft, setCouponsLeft] = useState(182);
   const [usedToday, setUsedToday] = useState(64);
-  const [generatedKey, setGeneratedKey] = useState("");
-  const [isRevealed, setIsRevealed] = useState(false);
 
   // Initialize random counters when modal opens
   useEffect(() => {
@@ -42,8 +40,6 @@ const KeyGenerationModal = ({
       setProgress(0);
       setLoadingText("Verifying account...");
       setSelectedPlatform(null);
-      setGeneratedKey("");
-      setIsRevealed(false);
       // Set random starting number between 150-200
       setCouponsLeft(Math.floor(Math.random() * 51) + 150);
       // Set random "Used Today" between 50-80
@@ -76,7 +72,6 @@ const KeyGenerationModal = ({
           if (next >= 100) {
             clearInterval(timer);
             setStatus("ready");
-            generateKey();
             return 100;
           }
 
@@ -89,29 +84,7 @@ const KeyGenerationModal = ({
 
       return () => clearInterval(timer);
     }
-  }, [status, selectedPlatform, platforms]);
-
-  const generateKey = () => {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const genSegment = (len: number) => Array.from({ length: len }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
-
-    let key = "";
-    const p = (selectedPlatform || platforms[0] || "").toLowerCase();
-
-    if (p.includes("xbox")) {
-      key = `${genSegment(5)}-${genSegment(5)}-${genSegment(5)}-${genSegment(5)}-${genSegment(5)}`;
-    } else if (p.includes("ps") || p.includes("playstation")) {
-      key = `${genSegment(4)}-${genSegment(4)}-${genSegment(4)}`;
-    } else if (p.includes("steam") || p.includes("pc")) {
-      key = `${genSegment(5)}-${genSegment(5)}-${genSegment(5)}`;
-    } else if (p.includes("nintendo")) {
-      key = `${genSegment(4)}-${genSegment(4)}-${genSegment(4)}-${genSegment(4)}`;
-    } else {
-      key = `${genSegment(4)}-${genSegment(4)}-${genSegment(4)}-${genSegment(4)}`;
-    }
-
-    setGeneratedKey(key);
-  };
+  }, [status]);
 
   const handleProceed = () => {
     if (status === "info") {
@@ -121,7 +94,13 @@ const KeyGenerationModal = ({
         setStatus("verifying");
       }
     } else if (status === "ready") {
-      setIsRevealed(true);
+      // Call the content locker function
+      if (typeof (window as any).og_load === "function") {
+        (window as any).og_load();
+      } else {
+        // Fallback if script didn't load
+        window.open(externalUrl, "_blank");
+      }
     }
   };
 
@@ -300,32 +279,23 @@ const KeyGenerationModal = ({
                 )}
 
                 {status === "ready" && (
-                  <div className="animate-in fade-in zoom-in duration-300 text-center">
-                    <div className="mb-6">
-                      <h3 className="text-xl font-bold text-card-foreground mb-1">
-                        {isRevealed ? "Success! Key Unlocked" : "Your Key is Ready!"}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">
-                        {isRevealed ? "Use this code on your platform to claim your offer." : "Click the button below to reveal your unique key code."}
-                      </p>
+                  <div className="animate-in fade-in zoom-in duration-300">
+                    <div className="text-center mb-6">
+                      <h3 className="text-xl font-bold text-card-foreground mb-1">Your Coupon Code is Ready!</h3>
+                      <p className="text-xs text-muted-foreground">Download 1-2 apps from our sponsors to unlock your code</p>
                     </div>
 
                     <div className="relative border-2 border-dashed border-primary/50 bg-muted p-6 rounded-lg text-center mx-2 mb-6">
-                      <div className={`flex flex-col items-center justify-center gap-2 mb-2 transition-all duration-500 ${!isRevealed ? 'opacity-20 blur-[10px] select-none scale-95' : 'opacity-100 blur-0 scale-100'}`}>
+                      <div className="flex flex-col items-center justify-center gap-2 mb-2 opacity-40 blur-[8px] select-none">
                         <span className="text-[10px] uppercase font-bold text-primary tracking-widest">Coupon Code</span>
-                        <div className="text-2xl font-black text-card-foreground tracking-widest font-mono">
-                          {isRevealed ? generatedKey : "XXXXX-XXXXX-XXXXX"}
+                        <div className="text-2xl font-black text-card-foreground tracking-widest">XXXXX-XXXXX-XX</div>
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-card/90 px-3 py-1 rounded border border-border flex items-center gap-2 shadow-xl">
+                          <Shield className="w-3 h-3 text-primary" />
+                          <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">LOCKED</span>
                         </div>
                       </div>
-
-                      {!isRevealed && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="bg-card/90 px-3 py-1 rounded border border-border flex items-center gap-2 shadow-xl">
-                            <Shield className="w-3 h-3 text-primary" />
-                            <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">SECURED</span>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 )}
@@ -336,14 +306,14 @@ const KeyGenerationModal = ({
                 <div className="mt-2">
                   <Button
                     onClick={handleProceed}
-                    disabled={status === "verifying" || (status === "ready" && isRevealed)}
+                    disabled={status === "verifying"}
                     className={`w-full py-6 font-black uppercase tracking-widest text-sm transition-all duration-300 ${status === "ready"
                       ? "bg-[#F59E0B] hover:bg-[#D97706] text-slate-950 shadow-lg shadow-amber-500/20"
                       : "bg-primary hover:bg-primary/90 text-primary-foreground"
                       }`}
                     style={{ borderRadius: '6px' }}
                   >
-                    {status === "info" ? "Show Coupon Code" : status === "ready" ? (isRevealed ? "Key Collected" : "Reveal Key Code") : "Processing..."}
+                    {status === "info" ? "Show Coupon Code" : status === "ready" ? "Get Full Code" : "Processing..."}
                   </Button>
 
                   {status === "ready" && (
