@@ -286,15 +286,9 @@ const KeyGenerationModal = ({
                     </div>
 
                     <div className="relative border-2 border-dashed border-primary/50 bg-muted p-6 rounded-lg text-center mx-2 mb-6">
-                      <div className="flex flex-col items-center justify-center gap-2 mb-2 opacity-40 blur-[8px] select-none">
+                      <div className="flex flex-col items-center justify-center gap-2 mb-2 select-none">
                         <span className="text-[10px] uppercase font-bold text-primary tracking-widest">Coupon Code</span>
-                        <div className="text-2xl font-black text-card-foreground tracking-widest">XXXXX-XXXXX-XX</div>
-                      </div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="bg-card/90 px-3 py-1 rounded border border-border flex items-center gap-2 shadow-xl">
-                          <Shield className="w-3 h-3 text-primary" />
-                          <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">LOCKED</span>
-                        </div>
+                        <div className="text-2xl font-black text-card-foreground tracking-widest">7W64T-BYRC8-62VBA</div>
                       </div>
                     </div>
                   </div>
